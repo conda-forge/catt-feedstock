@@ -1,15 +1,15 @@
 schema_version: 1
 
 context:
-  version: "0.13.2"
+  version: "0.13.3"
 
 package:
   name: catt
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/c/catt/catt-${{ version }}.tar.gz
-  sha256: 06ec4f2baa8c560326d2a40f1c725aedefc2f02f15af5414359ba7f8fcb311e7
+  url: https://files.pythonhosted.org/packages/source/c/catt/catt-${{ version }}.tar.gz
+  sha256: 012659cddbdb029543dcc7df5d8833f7601d40fd3a8ce53c85f4cd4f1d9b6577
 
 build:
   number: 0
@@ -21,11 +21,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python ${{ python_min }}.*
     - pip
     - poetry
   run:
-    - python >=3.7
+    - python >=${{ python_min }}
     - click >=7.1.2
     - ifaddr >=0.1.7
     - pychromecast >=14.0.1,<15
